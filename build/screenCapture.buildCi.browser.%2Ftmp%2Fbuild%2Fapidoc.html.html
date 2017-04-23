@@ -1,0 +1,787 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/TooTallNate/node-time#readme">time (v0.12.0)</a>
+</h1>
+<h4>"time.h" bindings for Node.js</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.time">module time</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.time.time">
+            function <span class="apidocSignatureSpan"></span>time
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.time.Date">
+            function <span class="apidocSignatureSpan">time.</span>Date
+            <span class="apidocSignatureSpan">(year, month, day, hour, minute, second, millisecond, timezone)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.time.extend">
+            function <span class="apidocSignatureSpan">time.</span>extend
+            <span class="apidocSignatureSpan">(date)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.time.listTimezones">
+            function <span class="apidocSignatureSpan">time.</span>listTimezones
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.time.localtime">
+            function <span class="apidocSignatureSpan">time.</span>localtime
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.time.mktime">
+            function <span class="apidocSignatureSpan">time.</span>mktime
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.time.parse">
+            function <span class="apidocSignatureSpan">time.</span>parse
+            <span class="apidocSignatureSpan">(dateStr, timezone)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.time.tzset">
+            function <span class="apidocSignatureSpan">time.</span>tzset
+            <span class="apidocSignatureSpan">(tz)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">time.</span>Date.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">time.</span>currentTimezone</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.time.Date">module time.Date</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.time.Date.Date">
+            function <span class="apidocSignatureSpan">time.</span>Date
+            <span class="apidocSignatureSpan">(year, month, day, hour, minute, second, millisecond, timezone)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.time.Date.prototype">module time.Date.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.time.Date.prototype.getTimezone">
+            function <span class="apidocSignatureSpan">time.Date.prototype.</span>getTimezone
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.time.Date.prototype.getTimezoneAbbr">
+            function <span class="apidocSignatureSpan">time.Date.prototype.</span>getTimezoneAbbr
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.time.Date.prototype.setTimezone">
+            function <span class="apidocSignatureSpan">time.Date.prototype.</span>setTimezone
+            <span class="apidocSignatureSpan">(timezone, relative)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.time" id="apidoc.module.time">module time</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.time.time" id="apidoc.element.time.time">
+        function <span class="apidocSignatureSpan"></span>time
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function time() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+### time() -&gt; Number
+
+Binding for `time()`. Returns the number of seconds since Jan 1, 1900 UTC.
+These two are equivalent:
+
+``` javascript
+time.<span class="apidocCodeKeywordSpan">time</span>();
+  // 1299827226
+Math.floor(Date.now() / 1000);
+  // 1299827226
+```
+
+
+### tzset(timezone) -&gt; Object
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.time.Date" id="apidoc.element.time.Date">
+        function <span class="apidocSignatureSpan">time.</span>Date
+        <span class="apidocSignatureSpan">(year, month, day, hour, minute, second, millisecond, timezone)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Date(year, month, day, hour, minute, second, millisecond, timezone) {
+  if (!(this instanceof Date)) {
+    return new Date(year, month, day, hour, minute, second, millisecond, timezone).toString();
+  }
+  var argc = arguments.length
+    , d;
+  // So that we don't have to do the switch block below twice!
+  while (argc &gt; 0 &amp;&amp; typeof arguments[argc-1] === 'undefined') {
+    argc--;
+  }
+  // An optional 'timezone' argument may be passed as the final argument
+  if (argc &gt;= 2 &amp;&amp; typeof arguments[argc - 1] === 'string') {
+    timezone = arguments[argc - 1];
+    argc--;
+  }
+  // Ugly, but the native Date constructor depends on arguments.length in order
+  // to create a Date instance in the intended fashion.
+  switch (argc) {
+    case 0:
+      d = new _Date(); break;
+    case 1:
+      d = new _Date(year); break;
+    case 2:
+      d = new _Date(year, month); break;
+    case 3:
+      d = new _Date(year, month, day); break;
+    case 4:
+      d = new _Date(year, month, day, hour); break;
+    case 5:
+      d = new _Date(year, month, day, hour, minute); break;
+    case 6:
+      d = new _Date(year, month, day, hour, minute, second); break;
+    case 7:
+      d = new _Date(year, month, day, hour, minute, second, millisecond); break;
+  }
+  if (timezone) {
+    // set time given timezone relative to the currently set local time
+    // (changing the internal "time" milliseconds value unless ms specified)
+    d.setTimezone(timezone, !(argc == 1 &amp;&amp; typeof year === 'number'));
+  } else {
+    d.setTimezone(exports.currentTimezone);
+  }
+  return d;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Example
+-------
+
+``` javascript
+var time = require('time');
+
+// Create a new Date instance, representing the current instant in time
+var now = new time.<span class="apidocCodeKeywordSpan">Date</span>();
+
+now.setTimezone("America/Los_Angeles");
+// `.getDate()`, `.getDay()`, `.getHours()`, etc.
+// will return values according to UTC-8
+
+now.setTimezone("America/New_York");
+// `.getDate()`, `.getDay()`, `.getHours()`, etc.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.time.extend" id="apidoc.element.time.extend">
+        function <span class="apidocSignatureSpan">time.</span>extend
+        <span class="apidocSignatureSpan">(date)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function extend(date) {
+  if (!date) return date;
+  date.getTimezone = getTimezone;
+  date.setTimezone = setTimezone;
+  date.getTimezoneAbbr = getTimezoneAbbr;
+  return date;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+### extend(date) -&gt; Date
+
+Transforms a "regular" Date instance into one of `node-time`'s "extended" Date instances.
+
+``` javascript
+var d = new Date();
+// `d.setTimezone()` does not exist...
+time.<span class="apidocCodeKeywordSpan">extend</span>(d);
+d.setTimezone("UTC");
+```
+
+
+### time() -&gt; Number
+
+Binding for `time()`. Returns the number of seconds since Jan 1, 1900 UTC.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.time.listTimezones" id="apidoc.element.time.listTimezones">
+        function <span class="apidocSignatureSpan">time.</span>listTimezones
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function listTimezones() {
+  if (arguments.length == 0) {
+    throw new Error("You must set a callback");
+  }
+  if (typeof arguments[arguments.length - 1] != "function") {
+    throw new Error("You must set a callback");
+  }
+  var cb = arguments[arguments.length - 1]
+    , subset = (arguments.length &gt; 1 ? arguments[0] : null)
+
+  return listTimezonesFolder(subset ? subset + "/" : "", subset ? path.join(TZDIR, "/" + subset) : TZDIR, function (err, tzs) {
+    if (err) return cb(err);
+    cb(null, tzs.sort());
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.time.localtime" id="apidoc.element.time.localtime">
+        function <span class="apidocSignatureSpan">time.</span>localtime
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function localtime() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Binding for `localtime()`. Accepts a Number with the number of seconds since the
+Epoch (i.e. the result of `time()`), and returns a "broken-down" Object
+representation of the timestamp, according the the currently configured timezone
+(see `tzset()`).
+
+``` javascript
+time.<span class="apidocCodeKeywordSpan">localtime</span>(Date.now()/1000);
+// { seconds: 38,
+//   minutes: 7,
+//   hours: 23,
+//   dayOfMonth: 10,
+//   month: 2,
+//   year: 111,
+//   dayOfWeek: 4,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.time.mktime" id="apidoc.element.time.mktime">
+        function <span class="apidocSignatureSpan">time.</span>mktime
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function mktime() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  this.setTimezone(this.getTimezone());
+}
+// 'mktime' calls 'reset' implicitly through 'setTime()'
+function mktime () {
+  var oldTz = process.env.TZ;
+  exports.tzset(this.getTimezone());
+  zoneInfo.isDaylightSavings = -1; // Auto-detect the timezone
+  var t = exports.<span class="apidocCodeKeywordSpan">mktime</span>(zoneInfo);
+  if (oldTz) {
+    exports.tzset(oldTz);
+    oldTz = null;
+  }
+  return this.setTime( (t * MILLIS_PER_SECOND) + this.getMilliseconds() );
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.time.parse" id="apidoc.element.time.parse">
+        function <span class="apidocSignatureSpan">time.</span>parse
+        <span class="apidocSignatureSpan">(dateStr, timezone)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function parse(dateStr, timezone) {
+  return new Date(dateStr, timezone).getTime();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+``` javascript
+date.getTimezoneAbbr();
+  // "ART"
+```
+
+
+### Date.<span class="apidocCodeKeywordSpan">parse</span>(dateStr [, timezone ]) -&gt; Number
+
+Same as the native JavaScript `Date.parse()` function, only this version allows
+for a second, optional, `timezone` argument, which specifies the timezone in
+which the date string parsing will be resolved against. This function is also
+aliased as `time.parse()`.
+
+``` javascript
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.time.tzset" id="apidoc.element.time.tzset">
+        function <span class="apidocSignatureSpan">time.</span>tzset
+        <span class="apidocSignatureSpan">(tz)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function tzset(tz) {
+  if (tz) {
+    process.env.TZ = tz;
+  }
+  var usedTz = process.env.TZ;
+  var rtn = bindings.tzset();
+  debug('set the current timezone to:', usedTz);
+  if (!rtn.tzname[1] &amp;&amp; rtn.timezone === 0) {
+    debug('got bad zoneinfo object:', rtn);
+    var err = new Error("Unknown Timezone: '" + usedTz + "'");
+    for (var i in rtn) {
+      err[i] = rtn[i];
+    }
+    throw err;
+  }
+  exports.currentTimezone = usedTz;
+  exports._currentZoneinfo = rtn;
+  return rtn;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Binding for `tzset()`. Sets up the timezone information that `localtime()` will
+use based on the specified _timezone_ variable, or the current `process.env.TZ`
+value if none is specified. Returns an Object containing information about the
+newly set timezone, or throws an Error if no timezone information could be loaded
+for the specified timezone.
+
+``` javascript
+time.<span class="apidocCodeKeywordSpan">tzset</span>('US/Pacific');
+  // { tzname: [ 'PST', 'PDT' ],
+  //   timezone: 28800,
+  //   daylight: 1 }
+```
+
+
+### localtime(Number) -&gt; Object
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.time.Date" id="apidoc.module.time.Date">module time.Date</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.time.Date.Date" id="apidoc.element.time.Date.Date">
+        function <span class="apidocSignatureSpan">time.</span>Date
+        <span class="apidocSignatureSpan">(year, month, day, hour, minute, second, millisecond, timezone)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Date(year, month, day, hour, minute, second, millisecond, timezone) {
+  if (!(this instanceof Date)) {
+    return new Date(year, month, day, hour, minute, second, millisecond, timezone).toString();
+  }
+  var argc = arguments.length
+    , d;
+  // So that we don't have to do the switch block below twice!
+  while (argc &gt; 0 &amp;&amp; typeof arguments[argc-1] === 'undefined') {
+    argc--;
+  }
+  // An optional 'timezone' argument may be passed as the final argument
+  if (argc &gt;= 2 &amp;&amp; typeof arguments[argc - 1] === 'string') {
+    timezone = arguments[argc - 1];
+    argc--;
+  }
+  // Ugly, but the native Date constructor depends on arguments.length in order
+  // to create a Date instance in the intended fashion.
+  switch (argc) {
+    case 0:
+      d = new _Date(); break;
+    case 1:
+      d = new _Date(year); break;
+    case 2:
+      d = new _Date(year, month); break;
+    case 3:
+      d = new _Date(year, month, day); break;
+    case 4:
+      d = new _Date(year, month, day, hour); break;
+    case 5:
+      d = new _Date(year, month, day, hour, minute); break;
+    case 6:
+      d = new _Date(year, month, day, hour, minute, second); break;
+    case 7:
+      d = new _Date(year, month, day, hour, minute, second, millisecond); break;
+  }
+  if (timezone) {
+    // set time given timezone relative to the currently set local time
+    // (changing the internal "time" milliseconds value unless ms specified)
+    d.setTimezone(timezone, !(argc == 1 &amp;&amp; typeof year === 'number'));
+  } else {
+    d.setTimezone(exports.currentTimezone);
+  }
+  return d;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Example
+-------
+
+``` javascript
+var time = require('time');
+
+// Create a new Date instance, representing the current instant in time
+var now = new time.<span class="apidocCodeKeywordSpan">Date</span>();
+
+now.setTimezone("America/Los_Angeles");
+// `.getDate()`, `.getDay()`, `.getHours()`, etc.
+// will return values according to UTC-8
+
+now.setTimezone("America/New_York");
+// `.getDate()`, `.getDay()`, `.getHours()`, etc.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.time.Date.prototype" id="apidoc.module.time.Date.prototype">module time.Date.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.time.Date.prototype.getTimezone" id="apidoc.element.time.Date.prototype.getTimezone">
+        function <span class="apidocSignatureSpan">time.Date.prototype.</span>getTimezone
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getTimezone() {
+  throw new Error('You must call "setTimezone(tz)" before "getTimezone()" may be called');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+now.setTimezone("America/New_York");
+// `.getDate()`, `.getDay()`, `.getHours()`, etc.
+// will return values according to UTC-5
+
+
+// You can also set the timezone during instantiation
+var azDate = new time.Date(2010, 0, 1, 'America/Phoenix');
+azDate.<span class="apidocCodeKeywordSpan">getTimezone</span>(); // 'America/Phoenix'
+```
+
+### Extending the global `Date` object
+
+`node-time` provides a convenient `time.Date` object, which is its own Date
+constructor independent from your own (or the global) Date object. There are often
+times, however, when you would like the benefits of node-time on *all* Date
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.time.Date.prototype.getTimezoneAbbr" id="apidoc.element.time.Date.prototype.getTimezoneAbbr">
+        function <span class="apidocSignatureSpan">time.Date.prototype.</span>getTimezoneAbbr
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getTimezoneAbbr() {
+  var str = this.toString().match(/\([A-Z]+\)/)[0];
+  return str.substring(1, str.length-1);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+``` javascript
+date.getTimezone();
+// "America/Argentina/San_Juan"
+```
+
+
+#### date.<span class="apidocCodeKeywordSpan">getTimezoneAbbr</span>() -&gt; String
+
+Returns the abbreviated timezone name, also taking daylight savings into consideration.
+Useful for the presentation layer of a Date instance.
+
+``` javascript
+date.getTimezoneAbbr();
+// "ART"
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.time.Date.prototype.setTimezone" id="apidoc.element.time.Date.prototype.setTimezone">
+        function <span class="apidocSignatureSpan">time.Date.prototype.</span>setTimezone
+        <span class="apidocSignatureSpan">(timezone, relative)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setTimezone(timezone, relative) {
+  debug('Date#setTimezone(%s, %s)', timezone, relative);
+
+  // If `true` is passed in as the second argument, then the Date instance
+  // will have it's timezone set, but it's current local values will remain
+  // the same (i.e. the Date's internal time value will be changed)
+  var ms, s, m, h, d, mo, y
+  if (relative) {
+    y  = this.getFullYear()
+    mo = this.getMonth()
+    d  = this.getDate()
+    h  = this.getHours()
+    m  = this.getMinutes()
+    s  = this.getSeconds()
+    ms = this.getMilliseconds()
+  }
+
+  // If the current process timezone doesn't match the desired timezone, then call
+  // tzset() to change the current timezone of the process.
+  var oldTz = exports.currentTimezone
+    , tz = exports._currentZoneinfo;
+  if (!tz || oldTz !== timezone) {
+    debug('current timezone is not "%s", calling tzset()', timezone);
+    tz = exports.tzset(timezone);
+  }
+
+  // Get the zoneinfo for this Date instance's time value
+  var zoneInfo = exports.localtime(this.getTime() / 1000);
+
+  // Change the timezone back if we changed it originally
+  if (oldTz != timezone) {
+    debug('setting timezone back to "%s"', oldTz);
+    exports.tzset(oldTz);
+  }
+  oldTz = null;
+
+  // If we got to here without throwing an Error, then
+  // a valid timezone was requested, and we should have
+  // a valid zoneInfo Object.
+  this.getTimezone = function getTimezone() {
+    return timezone;
+  }
+
+  // Returns the day of the month (1-31) for the specified date according to local time.
+  this.getDate = function getDate() {
+    return zoneInfo.dayOfMonth;
+  }
+  // Returns the day of the week (0-6) for the specified date according to local time.
+  this.getDay = function getDay() {
+    return zoneInfo.dayOfWeek;
+  }
+  // Deprecated. Returns the year (usually 2-3 digits) in the specified date according
+  // to local time. Use `getFullYear()` instead.
+  this.getYear = function getYear() {
+    return zoneInfo.year;
+  }
+  // Returns the year (4 digits for 4-digit years) of the specified date according to local time.
+  this.getFullYear = function getFullYear() {
+    return zoneInfo.year + 1900;
+  }
+  // Returns the hour (0-23) in the specified date according to local time.
+  this.getHours = function getHours() {
+    return zoneInfo.hours;
+  }
+  // Returns the minutes (0-59) in the specified date according to local time.
+  this.getMinutes = function getMinutes() {
+    return zoneInfo.minutes;
+  }
+  // Returns the month (0-11) in the specified date according to local time.
+  this.getMonth = function getMonth() {
+    return zoneInfo.month;
+  }
+  // Returns the seconds (0-59) in the specified date according to local time.
+  this.getSeconds = function getSeconds() {
+    return zoneInfo.seconds;
+  }
+  // Returns the timezone offset from GMT the Date instance currently is in,
+  // in minutes. Also, left of GMT is positive, right of GMT is negative.
+  this.getTimezoneOffset = function getTimezoneOffset() {
+    return -zoneInfo.gmtOffset / 60;
+  }
+  // NON-STANDARD: Returns the abbreviation (e.g. EST, EDT) for the specified time zone.
+  this.getTimezoneAbbr = function getTimezoneAbbr() {
+    return tz.tzname[zoneInfo.isDaylightSavings ? 1 : 0];
+  }
+
+  // Sets day, month and year at once
+  this.setAllDateFields = function setAllDateFields(y,mo,d) {
+    return this.setFullYear(y,mo,d);
+  }
+  // Sets the day of the month (from 1-31) in the current timezone
+  this.setDate = function setDate(d) {
+    zoneInfo.dayOfMonth = d;
+    return mktime.call(this);
+  }
+  // Sets the year (four digits) in the current timezone
+  this.setFullYear = function setFullYear(y,mo,d) {
+    zoneInfo.year = y - 1900;
+    if(arguments.length &gt; 1)
+      zoneInfo.month = mo;
+    if(arguments.length &gt; 2)
+      zoneInfo.dayOfMonth = d;
+    return mktime.call(this);
+  }
+  // Sets the hour (from 0-23) in the current timezone
+  this.setHours = function setHours(h,m,s,ms) {
+    zoneInfo.hours = h;
+    if(arguments.length &gt; 1)
+      zoneInfo.minutes = m;
+    if(arguments.length &gt; 2)
+      zoneInfo.seconds = s;
+    if(arguments.length &gt; 3) {
+      mktime.call(thi ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+``` javascript
+var time = require('time');
+
+// Create a new Date instance, representing the current instant in time
+var now = new time.Date();
+
+now.<span class="apidocCodeKeywordSpan">setTimezone</span>("America/Los_Angeles");
+// `.getDate()`, `.getDay()`, `.getHours()`, etc.
+// will return values according to UTC-8
+
+now.setTimezone("America/New_York");
+// `.getDate()`, `.getDay()`, `.getHours()`, etc.
+// will return values according to UTC-5
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
